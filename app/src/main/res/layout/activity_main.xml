@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logomain"
+        android:layout_width="310dp"
+        android:layout_height="234dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        />
+
+    <ImageView
+        android:layout_width="416dp"
+        android:layout_height="600dp"
+        android:layout_below="@id/logomain"
+        android:src="@drawable/football_field"
+        />
+
+   <Button
+       android:id="@+id/startQuiz"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Start quiz"
+       android:textSize="22dp"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="290dp"
+       android:background="@drawable/button_mainactivity"
+       />
+
+    <Button
+        android:id="@+id/allLevels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All levels"
+        android:textSize="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/startQuiz"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_mainactivity"
+        />
+
+
+
+</RelativeLayout>
