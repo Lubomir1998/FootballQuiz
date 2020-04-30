@@ -123,6 +123,43 @@ public class DbHelper extends SQLiteOpenHelper {
                 Question.LEVEL_1);
         insertQuestions(salah);
 
+        BigInteger Neuer = BigInteger.valueOf(R.drawable.neuer);
+        Question neuer = new Question(Neuer.toByteArray(),
+                "Manuel Neuer", "Oliver Kahn", "Marc Andre ter Stegen", "Franz Beckenbauer", 1,
+                Question.LEVEL_1);
+        insertQuestions(neuer);
+
+        BigInteger James = BigInteger.valueOf(R.drawable.james);
+        Question james = new Question(James.toByteArray(),
+                "Cesc Fabregas", "Juan Cuadrado", "James Rodriguez", "David Ospina", 3,
+                Question.LEVEL_1);
+        insertQuestions(james);
+
+        BigInteger Costa = BigInteger.valueOf(R.drawable.costa);
+        Question costa = new Question(Costa.toByteArray(),
+                "David Silva", "Koke", "Fernando Torres", "Diego Costa", 4,
+                Question.LEVEL_1);
+        insertQuestions(costa);
+
+        BigInteger Modric = BigInteger.valueOf(R.drawable.modric);
+        Question modric = new Question(Modric.toByteArray(),
+                "Samir Handanovic", "Luca Modric", "Mario Mandzukic", "Ivan Rakitic", 2,
+                Question.LEVEL_1);
+        insertQuestions(modric);
+
+        BigInteger Mbape = BigInteger.valueOf(R.drawable.mbape);
+        Question mbape = new Question(Mbape.toByteArray(),
+                "Kylian M'bappe", "Antoine Griezmann", "Bernardo Silva", "Blaise Matuidi", 1,
+                Question.LEVEL_1);
+        insertQuestions(mbape);
+
+        BigInteger Icardi = BigInteger.valueOf(R.drawable.icardi);
+        Question icardi = new Question(Icardi.toByteArray(),
+                "Edinson Cavani", "Fabio Quagliarella", "Neymar Jr", "Mauro Icardi", 4,
+                Question.LEVEL_1);
+        insertQuestions(icardi);
+
+
         // Level 2  ----------------------------------------------------------------------------------------------
 
 

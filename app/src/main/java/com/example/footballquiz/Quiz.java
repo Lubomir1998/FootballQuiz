@@ -106,7 +106,7 @@ public class Quiz extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            if(score >= 8) {
+            if(score >= 13) {
                 finishLevel_1();
             }else{
                 level1_fail();
