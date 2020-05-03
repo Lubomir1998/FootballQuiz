@@ -106,7 +106,7 @@ public class Quiz extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            if(score >= 13) {
+            if(score >= 3) {
                 finishLevel_1();
             }else{
                 level1_fail();
@@ -165,12 +165,12 @@ public class Quiz extends AppCompatActivity {
         confirm.setText("Next");
     }
 
-    public void finishLevel_1(){
+    private void finishLevel_1(){
         DialogSuccess dialogSuccess = new DialogSuccess();
         dialogSuccess.show(getSupportFragmentManager(), "Tag");
     }
 
-    public void level1_fail(){
+    private void level1_fail(){
         DialogFail dialogFail = new DialogFail();
         dialogFail.show(getSupportFragmentManager(), "Tag_");
     }

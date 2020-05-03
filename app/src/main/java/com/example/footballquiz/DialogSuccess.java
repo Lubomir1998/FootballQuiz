@@ -15,12 +15,12 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogSuccess extends AppCompatDialogFragment {
 
-    Button b;
-    TextView textviewScore;
+    private Button b;
+    private TextView maxpoints, textviewScore;
 
-    Quiz q;
+    private Quiz q;
 
-    int score1;
+    private int score1;
 
     @NonNull
     @Override
@@ -33,12 +33,16 @@ public class DialogSuccess extends AppCompatDialogFragment {
         builder.setView(view);
 
         q = new Quiz();
+
         score1 = q.score;
 
-        textviewScore = view.findViewById(R.id.level1_score);
+        maxpoints = view.findViewById(R.id.max_points);
+        maxpoints.setText("Max points: 30");
+
+        textviewScore = view.findViewById(R.id.level_score);
         textviewScore.setText("Score: " + score1);
 
-        b = view.findViewById(R.id.gotolevel2);
+        b = view.findViewById(R.id.goToNextLevel);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

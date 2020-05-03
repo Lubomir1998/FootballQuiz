@@ -2,6 +2,7 @@ package com.example.footballquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -29,13 +30,16 @@ public class Quiz2 extends AppCompatActivity {
 
     private Question currentQuestion;
 
-    private int score, questionCount, totalQuestions;
+    static int score2;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz2);
+
+        score2 = 0;
 
         questionImg = findViewById(R.id.question_image2);
         radioGroup = findViewById(R.id.radiogr2);
@@ -93,7 +97,11 @@ public class Quiz2 extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            Toast.makeText(this, "Quiz finished", Toast.LENGTH_SHORT).show();
+            if(score2 >= 3) {
+                finishLevel_2();
+            }else{
+                level2_fail();
+            }
         }
     }
 
@@ -104,7 +112,7 @@ public class Quiz2 extends AppCompatActivity {
         int givenAnswer = radioGroup.indexOfChild(selectedAnswer) + 1;
 
         if (givenAnswer == currentQuestion.getAnswer()) {
-            score++;
+            score2++;
             selectedAnswer.setTextColor(getResources().getColor(R.color.green));
         }
         else {
@@ -112,6 +120,16 @@ public class Quiz2 extends AppCompatActivity {
         }
 
         confirm.setText("Next");
+    }
+
+    private void finishLevel_2(){
+        DialogSuccess2 dialogSuccess = new DialogSuccess2();
+        dialogSuccess.show(getSupportFragmentManager(), "Tag2");
+    }
+
+    private void level2_fail(){
+        DialogFail2 dialogFail = new DialogFail2();
+        dialogFail.show(getSupportFragmentManager(), "Tag2_");
     }
 
 }

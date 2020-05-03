@@ -29,13 +29,16 @@ public class Quiz3 extends AppCompatActivity {
 
     private Question currentQuestion;
 
-    private int score, questionCount, totalQuestions;
+    static int score3;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz3);
+
+        score3 = 0;
 
         questionImg = findViewById(R.id.question_image3);
         radioGroup = findViewById(R.id.radiogr3);
@@ -93,7 +96,11 @@ public class Quiz3 extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            Toast.makeText(this, "Quiz finished", Toast.LENGTH_SHORT).show();
+            if(score3 >= 3) {
+                finishLevel_3();
+            }else{
+                level3_fail();
+            }
         }
     }
 
@@ -104,32 +111,20 @@ public class Quiz3 extends AppCompatActivity {
         int givenAnswer = radioGroup.indexOfChild(selectedAnswer) + 1;
 
         if (givenAnswer == currentQuestion.getAnswer()) {
-            score++;
+            score3++;
         }
 
-        showSolution();
-    }
-
-    private void showSolution(){
-        option_A.setTextColor(getResources().getColor(R.color.red));
-        option_B.setTextColor(getResources().getColor(R.color.red));
-        option_C.setTextColor(getResources().getColor(R.color.red));
-        option_D.setTextColor(getResources().getColor(R.color.red));
-
-        switch (currentQuestion.getAnswer()){
-            case 1:
-                option_A.setTextColor(getResources().getColor(R.color.green));
-                break;
-            case 2:
-                option_B.setTextColor(getResources().getColor(R.color.green));
-                break;
-            case 3:
-                option_C.setTextColor(getResources().getColor(R.color.green));
-                break;
-            case 4:
-                option_D.setTextColor(getResources().getColor(R.color.green));
-                break;
-        }
         confirm.setText("Next");
     }
+
+    private void finishLevel_3(){
+        DialogSuccess3 dialogSuccess = new DialogSuccess3();
+        dialogSuccess.show(getSupportFragmentManager(), "Tag3");
+    }
+
+    private void level3_fail(){
+        DialogFail3 dialogFail = new DialogFail3();
+        dialogFail.show(getSupportFragmentManager(), "Tag3_");
+    }
+
 }

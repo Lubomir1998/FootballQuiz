@@ -38,7 +38,7 @@
         >
 
         <TextView
-            android:id="@+id/level1_score_"
+            android:id="@+id/level_score_"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -48,6 +48,7 @@
             />
 
         <TextView
+            android:id="@+id/failMaxpoints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -60,7 +61,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/failedlevel1"
+        android:id="@+id/failedlevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
