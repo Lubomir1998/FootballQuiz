@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz3"></activity>
+        <activity android:name=".AllLevelsActivity"></activity>
+        <activity android:name=".Quiz3" />
         <activity android:name=".Quiz2" />
         <activity android:name=".Quiz" />
         <activity android:name=".MainActivity">

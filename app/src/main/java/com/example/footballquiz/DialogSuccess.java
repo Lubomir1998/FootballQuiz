@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogSuccess extends AppCompatDialogFragment {
 
-    private Button b;
+    private Button b, levelList;
     private TextView maxpoints, textviewScore;
 
     private Quiz q;
@@ -52,8 +52,19 @@ public class DialogSuccess extends AppCompatDialogFragment {
             }
         });
 
+        levelList = view.findViewById(R.id.levelList);
+
+        levelList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return builder.create();
     }
+
 
 
 }

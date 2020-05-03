@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogFail2 extends AppCompatDialogFragment {
 
-    private Button b;
+    private Button b, levelList;
     private TextView textviewScore, failMaxPoints;
 
     private Quiz q;
@@ -47,6 +47,16 @@ public class DialogFail2 extends AppCompatDialogFragment {
         textviewScore.setText("Score: " + total);
 
         b = view.findViewById(R.id.failedlevel);
+
+        levelList = view.findViewById(R.id.levelList);
+
+        levelList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

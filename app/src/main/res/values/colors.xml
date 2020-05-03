@@ -11,5 +11,9 @@
     <color name="black">#000000</color>
     <color name="successStart">#0BD121</color>
     <color name="successEnd">#5BF720</color>
+    <color name="blueStart">#0BA6E1</color>
+    <color name="blueEnd">#18B5F1</color>
+    <color name="darkGrey">#545758</color>
+    <color name="lightGrey">#848A8C</color>
 
 </resources>

@@ -60,6 +60,7 @@
 
     </LinearLayout>
 
+
     <Button
         android:id="@+id/failedlevel"
         android:layout_width="wrap_content"
@@ -68,9 +69,24 @@
         android:text="Try again"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="25dp"
         android:background="@drawable/fail_button"
         android:textColor="@color/white"
         />
+
+        <Button
+            android:id="@+id/levelList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Level list"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/go_to_level_list"
+            android:textColor="@color/white"
+            />
+
+
+
 
 </LinearLayout>
