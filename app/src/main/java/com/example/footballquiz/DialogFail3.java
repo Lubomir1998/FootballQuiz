@@ -22,7 +22,7 @@ public class DialogFail3 extends AppCompatDialogFragment {
     private Quiz2 q2;
     private Quiz3 q3;
 
-    private int score1, score2, score3;
+    private int score1, score2, score3, total3;
 
     @NonNull
     @Override
@@ -43,9 +43,9 @@ public class DialogFail3 extends AppCompatDialogFragment {
         score3 = q3.score3;
 
         failMaxPoints = view.findViewById(R.id.failMaxpoints);
-        failMaxPoints.setText("Max points: 90");
+        failMaxPoints.setText("Max points: 9");
 
-        int total3 = score1 + score2 + score3;
+        total3 = score1 + score2 + score3;
         textviewScore = view.findViewById(R.id.level_score_);
         textviewScore.setText("Score: " + total3);
 
@@ -65,6 +65,7 @@ public class DialogFail3 extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Quiz3.class);
+                intent.putExtra("level3fail", total3);
                 startActivity(intent);
             }
         });

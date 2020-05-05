@@ -43,7 +43,7 @@ public class DialogSuccess3 extends AppCompatDialogFragment {
         score3 = q3.score3;
 
         maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 90");
+        maxpoints.setText("Max points: 9");
 
         total3 = score + score2 + score3;
         textviewScore = view.findViewById(R.id.level_score);
@@ -64,8 +64,9 @@ public class DialogSuccess3 extends AppCompatDialogFragment {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(getActivity(), Quiz4.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), Quiz4.class);
+                intent.putExtra("scoreLevel3", total3);
+                startActivity(intent);
             }
         });
 

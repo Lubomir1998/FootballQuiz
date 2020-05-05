@@ -1,11 +1,13 @@
 package com.example.footballquiz;
 
-import android.widget.ImageView;
 
 public class Question {
     public static final String LEVEL_1 = "level 1";
     public static final String LEVEL_2 = "level 2";
     public static final String LEVEL_3 = "level 3";
+    public static final String LEVEL_4 = "level 4";
+    public static final String LEVEL_5 = "level 5";
+    public static final String LEVEL_6 = "level 6";
 
     private byte[] question;
     private String optionA;
