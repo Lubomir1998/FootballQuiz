@@ -49,7 +49,7 @@ public class DialogSuccess5 extends AppCompatDialogFragment {
         score5 = q5.score5;
 
         maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 15");
+        maxpoints.setText("Max points: 150");
 
         total5 = score + score2 + score3 + score4;
         textviewScore = view.findViewById(R.id.level_score);

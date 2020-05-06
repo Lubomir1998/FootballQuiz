@@ -37,7 +37,7 @@ public class DialogSuccess extends AppCompatDialogFragment {
         score1 = q.score;
 
         maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 3");
+        maxpoints.setText("Max points: 30");
 
         textviewScore = view.findViewById(R.id.level_score);
         textviewScore.setText("Score: " + score1);

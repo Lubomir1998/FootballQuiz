@@ -46,7 +46,7 @@ public class DialogFail4 extends AppCompatDialogFragment {
         score4 = q4.score4;
 
         failMaxPoints = view.findViewById(R.id.failMaxpoints);
-        failMaxPoints.setText("Max points: 12");
+        failMaxPoints.setText("Max points: 120");
 
         total4 = score1 + score2 + score3 + score4;
         textviewScore = view.findViewById(R.id.level_score_);

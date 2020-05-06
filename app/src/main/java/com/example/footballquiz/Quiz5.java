@@ -103,7 +103,7 @@ public class Quiz5 extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            if((score5 + scoreFromPrevLevels) >= 13) {
+            if((score5 + scoreFromPrevLevels) >= 135) {
                 finishLevel_5();
             }else{
                 level5_fail();
