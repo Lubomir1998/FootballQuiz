@@ -168,6 +168,18 @@ public class DbHelper extends SQLiteOpenHelper {
                 Question.LEVEL_2);
         insertQuestions(lacazet);
 
+        BigInteger Matuidi = BigInteger.valueOf(R.drawable.matuidi);
+        Question matuidi = new Question(Matuidi.toByteArray(),
+                "Kylian M'bappe", "Marco Verratti", "Paul Pogba", "Blaise Matuidi", 4,
+                Question.LEVEL_2);
+        insertQuestions(matuidi);
+
+        BigInteger Tadic = BigInteger.valueOf(R.drawable.tadic);
+        Question tadic = new Question(Tadic.toByteArray(),
+                "Frankie de Jong", "Nemanja Matic", "Dusan Tadic", "Branislav Ivanovic", 3,
+                Question.LEVEL_2);
+        insertQuestions(tadic);
+
         BigInteger Lukaku = BigInteger.valueOf(R.drawable.lukaku);
         Question lukaku = new Question(Lukaku.toByteArray(),
                 "Jordan Lukaku", "Romelu Lukaku", "Juan Mata", "Ross Barkley", 2,

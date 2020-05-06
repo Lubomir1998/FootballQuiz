@@ -3,9 +3,11 @@ package com.example.footballquiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AllLevelsActivity extends AppCompatActivity {
@@ -19,6 +21,8 @@ public class AllLevelsActivity extends AppCompatActivity {
     private Quiz4 q4;
     private Quiz5 q5;
     private Quiz6 q6;
+
+    public static final String SHARED_PREFS = "shred_prefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +52,26 @@ public class AllLevelsActivity extends AppCompatActivity {
 
         totalPoints = score1 + score2 + score3 + score4 + score5 + score6;
 
-       if(totalPoints < 25){
-           l2.setBackground(getResources().getDrawable(R.drawable.locked_level));
+        savePoints();
+
+        TextView tpoints = findViewById(R.id.totaal);
+        tpoints.setText("Total points: " + totalPoints);
+
+
+       if(totalPoints > 25){
+           l2.setBackground(getResources().getDrawable(R.drawable.all_levels_buttons));
        }
-       if(totalPoints < 55){
-           l3.setBackground(getResources().getDrawable(R.drawable.locked_level));
+       if(totalPoints > 55){
+           l3.setBackground(getResources().getDrawable(R.drawable.all_levels_buttons));
        }
-       if(totalPoints < 80){
-           l4.setBackground(getResources().getDrawable(R.drawable.locked_level));
+       if(totalPoints > 80){
+           l4.setBackground(getResources().getDrawable(R.drawable.all_levels_buttons));
        }
-       if(totalPoints < 105){
-           l5.setBackground(getResources().getDrawable(R.drawable.locked_level));
+       if(totalPoints > 105){
+           l5.setBackground(getResources().getDrawable(R.drawable.all_levels_buttons));
        }
-       if(totalPoints < 135){
-           l6.setBackground(getResources().getDrawable(R.drawable.locked_level));
+       if(totalPoints > 135){
+           l6.setBackground(getResources().getDrawable(R.drawable.all_levels_buttons));
        }
 
     }
@@ -74,11 +84,17 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(totalPoints > 25){
             startActivity(new Intent(getApplicationContext(), Quiz2.class));
         }
+        else{
+            Toast.makeText(getApplicationContext(), "You need 25 points to unlock this level", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Level_3(View view){
         if(totalPoints > 55){
             startActivity(new Intent(getApplicationContext(), Quiz3.class));
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "You need 55 points to unlock this level", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -86,20 +102,34 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(totalPoints > 80){
             startActivity(new Intent(getApplicationContext(), Quiz4.class));
         }
-
+        else{
+            Toast.makeText(getApplicationContext(), "You need 80 points to unlock this level", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Level_5(View view){
         if(totalPoints > 105){
             startActivity(new Intent(getApplicationContext(), Quiz5.class));
         }
-
+        else{
+            Toast.makeText(getApplicationContext(), "You need 105 points to unlock this level", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Level_6(View view){
         if(totalPoints > 135){
             startActivity(new Intent(getApplicationContext(), Quiz6.class));
         }
+        else{
+            Toast.makeText(getApplicationContext(), "You need 135 points to unlock this level", Toast.LENGTH_LONG).show();
+        }
+    }
 
+    public void savePoints(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("key", totalPoints);
+        editor.apply();
+        totalPoints = sharedPreferences.getInt("key", totalPoints);
     }
 }
