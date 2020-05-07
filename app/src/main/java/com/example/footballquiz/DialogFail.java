@@ -22,6 +22,7 @@ public class DialogFail extends AppCompatDialogFragment {
 
     private int score1;
 
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class DialogFail extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
@@ -59,6 +61,7 @@ public class DialogFail extends AppCompatDialogFragment {
                 Intent intent = new Intent(getActivity(), Quiz.class);
                 intent.putExtra("scorefail", 0);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

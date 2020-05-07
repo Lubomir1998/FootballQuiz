@@ -24,7 +24,8 @@ public class DialogFail5 extends AppCompatDialogFragment {
     private Quiz4 q4;
     private Quiz5 q5;
 
-    private int score1, score2, score3, score4, score5, total5;
+    private int score1, score2, score3, score4, score5;
+    private int total5;
 
     @NonNull
     @Override
@@ -64,6 +65,7 @@ public class DialogFail5 extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
@@ -73,6 +75,7 @@ public class DialogFail5 extends AppCompatDialogFragment {
                 Intent intent = new Intent(getActivity(), Quiz5.class);
                 intent.putExtra("level5fail", total5);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

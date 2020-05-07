@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Quiz.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
             }
         });
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AllLevelsActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

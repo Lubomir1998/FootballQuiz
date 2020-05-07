@@ -21,7 +21,8 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
     private Quiz q;
     private Quiz2 q2;
 
-    private int score, score2, total2;
+    private int score, score2;
+    static int total2;
 
     @NonNull
     @Override
@@ -55,6 +56,7 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
@@ -64,6 +66,7 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
                 Intent intent = new Intent(getActivity(), Quiz3.class);
                 intent.putExtra("scoreLevel2", total2);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

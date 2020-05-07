@@ -3,6 +3,7 @@ package com.example.footballquiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -106,7 +107,7 @@ public class Quiz extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            if(score >= 25) {
+            if(score >= 5) {
                 finishLevel_1();
             }else{
                 level1_fail();

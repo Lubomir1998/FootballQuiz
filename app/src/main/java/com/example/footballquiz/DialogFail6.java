@@ -26,6 +26,7 @@ public class DialogFail6 extends AppCompatDialogFragment {
     private Quiz6 q6;
 
     private int score1, score2, score3, score4, score5, score6;
+    static int total6;
 
     @NonNull
     @Override
@@ -49,13 +50,14 @@ public class DialogFail6 extends AppCompatDialogFragment {
         score3 = q3.score3;
         score4 = q4.score4;
         score5 = q5.score5;
+        score6 = q6.score6;
 
         failMaxPoints = view.findViewById(R.id.failMaxpoints);
         failMaxPoints.setText("Max points: 180");
 
-        int total = score1 + score2 + score3 + score4 + score5 + score6;
+        total6 = score1 + score2 + score3 + score4 + score5 + score6;
         textviewScore = view.findViewById(R.id.level_score_);
-        textviewScore.setText("Score: " + total);
+        textviewScore.setText("Score: " + total6);
 
         b = view.findViewById(R.id.failedlevel);
 
@@ -66,6 +68,7 @@ public class DialogFail6 extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
@@ -73,7 +76,9 @@ public class DialogFail6 extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Quiz6.class);
+                intent.putExtra("level6fail", total6);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

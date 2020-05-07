@@ -55,6 +55,7 @@ public class DialogFail2 extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
@@ -64,6 +65,7 @@ public class DialogFail2 extends AppCompatDialogFragment {
                 Intent intent = new Intent(getActivity(), Quiz2.class);
                 intent.putExtra("level2fail", total);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

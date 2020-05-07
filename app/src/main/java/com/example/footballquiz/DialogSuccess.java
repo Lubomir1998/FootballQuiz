@@ -1,6 +1,7 @@
 package com.example.footballquiz;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +21,7 @@ public class DialogSuccess extends AppCompatDialogFragment {
 
     private Quiz q;
 
-    private int score1;
+    static int total1;
 
     @NonNull
     @Override
@@ -34,13 +35,13 @@ public class DialogSuccess extends AppCompatDialogFragment {
 
         q = new Quiz();
 
-        score1 = q.score;
+        total1 = q.score;
 
         maxpoints = view.findViewById(R.id.max_points);
         maxpoints.setText("Max points: 30");
 
         textviewScore = view.findViewById(R.id.level_score);
-        textviewScore.setText("Score: " + score1);
+        textviewScore.setText("Score: " + total1);
 
         b = view.findViewById(R.id.goToNextLevel);
 
@@ -48,8 +49,9 @@ public class DialogSuccess extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Quiz2.class);
-                intent.putExtra("scoreLevel1", score1);
+                intent.putExtra("scoreLevel1", total1);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -60,6 +62,7 @@ public class DialogSuccess extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
