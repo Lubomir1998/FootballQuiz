@@ -30,6 +30,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
 
     private int l1, l2, l3, l4, l5;
 
+    private DialogFail df;
     private AllLevelsActivity a;
 
     @NonNull
@@ -42,6 +43,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
         builder.setView(view);
 
         a = new AllLevelsActivity();
+        df = new DialogFail();
 
         //TextView
         points = view.findViewById(R.id.level_score);
@@ -67,7 +69,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
 
 
      // set the text where the number of points is shown
-        showPoints(points, previousLevel);
+        df.showPoints(points, previousLevel);
 
         loadUnlocked();
 
@@ -142,24 +144,6 @@ public class DialogNextLevel extends AppCompatDialogFragment {
         a.unlocked6 = s.getBoolean("e", false);
     }
 
-    public void showPoints(TextView t, int l){
-        switch (l){
-            case 1:
-                t.setText("Score: " + String.valueOf(q1.score));
-                break;
-            case 2:
-                t.setText("Score: " + String.valueOf(q2.score2));
-                break;
-            case 3:
-                t.setText("Score: " + String.valueOf(q3.score3));
-                break;
-            case 4:
-                t.setText("Score: " + String.valueOf(q4.score4));
-                break;
-            case 5:
-                t.setText("Score: " + String.valueOf(q5.score5));
-                break;
-        }
-    }
+
 
 }

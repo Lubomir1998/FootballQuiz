@@ -23,6 +23,7 @@ public class DialogFail extends AppCompatDialogFragment {
     private Quiz3 q3;
     private Quiz4 q4;
     private Quiz5 q5;
+    private Quiz6 q6;
 
     private int l1, l2, l3, l4, l5, l6;
     private int currentLevel;
@@ -50,6 +51,8 @@ public class DialogFail extends AppCompatDialogFragment {
         q3 = new Quiz3();
         q4 = new Quiz4();
         q5 = new Quiz5();
+        q6 = new Quiz6();
+
 
         d = new DialogNextLevel();
 
@@ -63,7 +66,7 @@ public class DialogFail extends AppCompatDialogFragment {
 
         currentLevel = d.findMax(l1, l2, l3, l4, l5, l6);
 
-        d.showPoints(fail, currentLevel);
+        showPoints(fail, currentLevel);
 
         levelList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,5 +112,27 @@ public class DialogFail extends AppCompatDialogFragment {
 
     }
 
+    public void showPoints(TextView t, int l){
+        switch (l){
+            case 1:
+                t.setText("Score: " + String.valueOf(q1.score));
+                break;
+            case 2:
+                t.setText("Score: " + String.valueOf(q2.score2));
+                break;
+            case 3:
+                t.setText("Score: " + String.valueOf(q3.score3));
+                break;
+            case 4:
+                t.setText("Score: " + String.valueOf(q4.score4));
+                break;
+            case 5:
+                t.setText("Score: " + String.valueOf(q5.score5));
+                break;
+            case 6:
+                t.setText("Score: " + String.valueOf(q6.score6));
+                break;
+        }
+    }
 
 }
