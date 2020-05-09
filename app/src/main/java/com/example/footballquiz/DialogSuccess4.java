@@ -15,16 +15,12 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogSuccess4 extends AppCompatDialogFragment {
 
-    private Button b, levelList;
+    private Button levelList;
     private TextView textviewScore, maxpoints;
 
-    private Quiz q;
-    private Quiz2 q2;
-    private Quiz3 q3;
     private Quiz4 q4;
 
-    private int score, score2, score3, score4;
-    static int total4;
+    private int score4;
 
     @NonNull
     @Override
@@ -36,24 +32,15 @@ public class DialogSuccess4 extends AppCompatDialogFragment {
 
         builder.setView(view);
 
-        q = new Quiz();
-        q2 = new Quiz2();
-        q3 = new Quiz3();
         q4 = new Quiz4();
 
-        score = q.score;
-        score2 = q2.score2;
-        score3 = q3.score3;
         score4 = q4.score4;
 
         maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 120");
+        maxpoints.setText("Max points: 30");
 
-        total4 = score + score2 + score3 + score4;
         textviewScore = view.findViewById(R.id.level_score);
-        textviewScore.setText("Score: " + total4);
-
-        b = view.findViewById(R.id.goToNextLevel);
+        textviewScore.setText("Score: " + score4);
 
         levelList = view.findViewById(R.id.levelList);
 
@@ -66,15 +53,6 @@ public class DialogSuccess4 extends AppCompatDialogFragment {
             }
         });
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Quiz5.class);
-                intent.putExtra("scoreLevel4", total4);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
 
         return builder.create();
     }

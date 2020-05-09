@@ -18,11 +18,9 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
     private Button b, levelList;
     private TextView textviewScore, maxpoints;
 
-    private Quiz q;
     private Quiz2 q2;
 
-    private int score, score2;
-    static int total2;
+    private int score2;
 
     @NonNull
     @Override
@@ -34,20 +32,15 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
 
         builder.setView(view);
 
-        q = new Quiz();
         q2 = new Quiz2();
 
-        score = q.score;
         score2 = q2.score2;
 
         maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 60");
+        maxpoints.setText("Max points: 30");
 
-        total2 = score + score2;
         textviewScore = view.findViewById(R.id.level_score);
-        textviewScore.setText("Score: " + total2);
-
-        b = view.findViewById(R.id.goToNextLevel);
+        textviewScore.setText("Score: " + score2);
 
         levelList = view.findViewById(R.id.levelList);
 
@@ -60,15 +53,6 @@ public class DialogSuccess2 extends AppCompatDialogFragment {
             }
         });
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Quiz3.class);
-                intent.putExtra("scoreLevel2", total2);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
 
         return builder.create();
     }

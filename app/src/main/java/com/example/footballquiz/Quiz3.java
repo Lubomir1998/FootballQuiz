@@ -31,7 +31,7 @@ public class Quiz3 extends AppCompatActivity {
     private Question currentQuestion;
 
     static int score3;
-    private int questionCount, scoreFromPrevLevels, totalQuestions;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
@@ -40,12 +40,6 @@ public class Quiz3 extends AppCompatActivity {
         setContentView(R.layout.activity_quiz3);
 
         score3 = 0;
-
-        Intent intent = getIntent();
-        scoreFromPrevLevels = intent.getIntExtra("scoreLevel2", 0 );
-
-        Intent i = getIntent();
-        scoreFromPrevLevels = i.getIntExtra("level3fail", scoreFromPrevLevels);
 
         questionImg = findViewById(R.id.question_image3);
         radioGroup = findViewById(R.id.radiogr3);
@@ -102,8 +96,8 @@ public class Quiz3 extends AppCompatActivity {
             answered = false;
             questionCount++;
             confirm.setText("Confirm");
-        }else{
-            if((score3 + scoreFromPrevLevels) >= 80) {
+        }else{ // 80
+            if(score3 >= 4) {
                 finishLevel_3();
             }else{
                 level3_fail();

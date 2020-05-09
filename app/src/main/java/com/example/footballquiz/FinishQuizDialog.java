@@ -6,21 +6,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class DialogSuccess3 extends AppCompatDialogFragment {
+public class FinishQuizDialog extends AppCompatDialogFragment {
 
-    private Button levelList;
-    private TextView textviewScore, maxpoints;
-
-    private Quiz3 q3;
-
-    private int score3;
+    Button main;
 
     @NonNull
     @Override
@@ -28,34 +22,21 @@ public class DialogSuccess3 extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_success, null);
+        View view = inflater.inflate(R.layout.finish_quiz, null);
 
         builder.setView(view);
 
-        q3 = new Quiz3();
+        main = view.findViewById(R.id.mainMenu);
 
-        score3 = q3.score3;
-
-        maxpoints = view.findViewById(R.id.max_points);
-        maxpoints.setText("Max points: 30");
-
-        textviewScore = view.findViewById(R.id.level_score);
-        textviewScore.setText("Score: " + score3);
-
-        levelList = view.findViewById(R.id.levelList);
-
-        levelList.setOnClickListener(new View.OnClickListener() {
+        main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getActivity(), MainActivity.class));
                 getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
+
         return builder.create();
     }
-
-
-
 }

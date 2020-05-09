@@ -37,7 +37,7 @@ public class DialogFail extends AppCompatDialogFragment {
         score1 = q.score;
 
         failMaxPoints = view.findViewById(R.id.failMaxpoints);
-        failMaxPoints.setText("Max points 30");
+        failMaxPoints.setText("Max points: 30");
 
         textviewScore = view.findViewById(R.id.level_score_);
         textviewScore.setText("Score: " + score1);
@@ -59,7 +59,6 @@ public class DialogFail extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Quiz.class);
-                intent.putExtra("scorefail", 0);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }

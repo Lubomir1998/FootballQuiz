@@ -96,68 +96,68 @@ public class DbHelper extends SQLiteOpenHelper {
         BigInteger Dybala = BigInteger.valueOf(R.drawable.dybala);
         Question dybala = new Question(Dybala.toByteArray(),
                 "Giorgio Chiellini", "Alessandro Del Piero", "Edinson Cavani", "Paolo Dybala", 4,
-                Question.LEVEL_1);
+                Question.LEVEL_2);
         insertQuestions(dybala);
 
 
         BigInteger Coutinho = BigInteger.valueOf(R.drawable.coutinho);
         Question coutinho = new Question(Coutinho.toByteArray(),
                "Roberto Firmino", "Wesley Sneijder", "Arjen Robben", "Philippe Coutinho", 4,
-               Question.LEVEL_1);
+               Question.LEVEL_2);
         insertQuestions(coutinho);
 
         BigInteger Hazard = BigInteger.valueOf(R.drawable.hazard);
         Question hazard = new Question(Hazard.toByteArray(),
                 "Eden Hazard", "Thibaut Courtois", "Kevin de Bruyne", "Zinedine Zidane", 1,
-                Question.LEVEL_1);
+                Question.LEVEL_2);
         insertQuestions(hazard);
 
         BigInteger Neymar = BigInteger.valueOf(R.drawable.neymar);
         Question neymar = new Question(Neymar.toByteArray(),
                 "Neymar Jr", "Rivaldo", "Robinho", "Sergio Busquets", 1,
-                Question.LEVEL_1);
+                Question.LEVEL_2);
         insertQuestions(neymar);
 
         BigInteger Salah = BigInteger.valueOf(R.drawable.salah);
         Question salah = new Question(Salah.toByteArray(),
                 "Kostas Manolas", "Mohamed Salah", "Francesco Toti", "Gabriel Batistuta", 2,
-                Question.LEVEL_1);
+                Question.LEVEL_2);
         insertQuestions(salah);
 
         BigInteger Neuer = BigInteger.valueOf(R.drawable.neuer);
         Question neuer = new Question(Neuer.toByteArray(),
                 "Manuel Neuer", "Oliver Kahn", "Marc Andre ter Stegen", "Franz Beckenbauer", 1,
-                Question.LEVEL_1);
+                Question.LEVEL_3);
         insertQuestions(neuer);
 
         BigInteger James = BigInteger.valueOf(R.drawable.james);
         Question james = new Question(James.toByteArray(),
                 "Cesc Fabregas", "Juan Cuadrado", "James Rodriguez", "David Ospina", 3,
-                Question.LEVEL_1);
+                Question.LEVEL_3);
         insertQuestions(james);
 
         BigInteger Costa = BigInteger.valueOf(R.drawable.costa);
         Question costa = new Question(Costa.toByteArray(),
                 "David Silva", "Koke", "Fernando Torres", "Diego Costa", 4,
-                Question.LEVEL_1);
+                Question.LEVEL_3);
         insertQuestions(costa);
 
         BigInteger Modric = BigInteger.valueOf(R.drawable.modric);
         Question modric = new Question(Modric.toByteArray(),
                 "Samir Handanovic", "Luca Modric", "Mario Mandzukic", "Ivan Rakitic", 2,
-                Question.LEVEL_1);
+                Question.LEVEL_3);
         insertQuestions(modric);
 
         BigInteger Mbape = BigInteger.valueOf(R.drawable.mbape);
         Question mbape = new Question(Mbape.toByteArray(),
                 "Kylian M'bappe", "Antoine Griezmann", "Bernardo Silva", "Blaise Matuidi", 1,
-                Question.LEVEL_1);
+                Question.LEVEL_3);
         insertQuestions(mbape);
 
         BigInteger Icardi = BigInteger.valueOf(R.drawable.icardi);
         Question icardi = new Question(Icardi.toByteArray(),
                 "Edinson Cavani", "Fabio Quagliarella", "Neymar Jr", "Mauro Icardi", 4,
-                Question.LEVEL_1);
+                Question.LEVEL_4);
         insertQuestions(icardi);
 
         // Level 2  ----------------------------------------------------------------------------------------------
@@ -165,103 +165,103 @@ public class DbHelper extends SQLiteOpenHelper {
         BigInteger Lacazaet = BigInteger.valueOf(R.drawable.lacazet);
         Question lacazet = new Question(Lacazaet.toByteArray(),
                 "Robin van Persie", "Nicolas Anelka", "Alexandre Lacazette", "Patric Viera", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_4);
         insertQuestions(lacazet);
 
         BigInteger Matuidi = BigInteger.valueOf(R.drawable.matuidi);
         Question matuidi = new Question(Matuidi.toByteArray(),
                 "Kylian M'bappe", "Marco Verratti", "Paul Pogba", "Blaise Matuidi", 4,
-                Question.LEVEL_2);
+                Question.LEVEL_4);
         insertQuestions(matuidi);
 
         BigInteger Tadic = BigInteger.valueOf(R.drawable.tadic);
         Question tadic = new Question(Tadic.toByteArray(),
                 "Frankie de Jong", "Nemanja Matic", "Dusan Tadic", "Branislav Ivanovic", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_4);
         insertQuestions(tadic);
 
         BigInteger Lukaku = BigInteger.valueOf(R.drawable.lukaku);
         Question lukaku = new Question(Lukaku.toByteArray(),
                 "Jordan Lukaku", "Romelu Lukaku", "Juan Mata", "Ross Barkley", 2,
-                Question.LEVEL_2);
+                Question.LEVEL_4);
         insertQuestions(lukaku);
 
         BigInteger Son = BigInteger.valueOf(R.drawable.son);
         Question son = new Question(Son.toByteArray(),
                 "Son Heung-min", "Harry Kane", "Dimitar Berbatov", "Kevin Folnad", 1,
-                Question.LEVEL_2);
+                Question.LEVEL_5);
         insertQuestions(son);
 
         BigInteger Kane = BigInteger.valueOf(R.drawable.kane);
         Question kane = new Question(Kane.toByteArray(),
                 "Frank Lampard", "Jamie Vardy", "Dany Rose", "Harry Kane", 4,
-                Question.LEVEL_2);
+                Question.LEVEL_5);
         insertQuestions(kane);
 
         BigInteger Willian = BigInteger.valueOf(R.drawable.willian);
         Question willian = new Question(Willian.toByteArray(),
                 "Fernandinho", "Douglas Costa", "Willian", "Juan Bernard", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_5);
         insertQuestions(willian);
 
         BigInteger Insigne = BigInteger.valueOf(R.drawable.insigne);
         Question insigne = new Question(Insigne.toByteArray(),
                 "Lorenzo Insigne", "Jorginho", "Marek Hamsik", "Marco Verati", 1,
-                Question.LEVEL_2);
+                Question.LEVEL_5);
         insertQuestions(insigne);
 
         BigInteger Verratti = BigInteger.valueOf(R.drawable.veratti);
         Question verratti = new Question(Verratti.toByteArray(),
                 "Marco Verratti", "Ciro Immobile", "Edinson Cavani", "Lorenzo Insigne", 1,
-                Question.LEVEL_2);
+                Question.LEVEL_5);
         insertQuestions(verratti);
 
         BigInteger Alba = BigInteger.valueOf(R.drawable.alba);
         Question alba = new Question(Alba.toByteArray(),
                 "David Villa", "Sergio Busquets", "Andres Iniesta", "Jordi Alba", 4,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(alba);
 
         BigInteger Alonso = BigInteger.valueOf(R.drawable.alonso);
         Question alonso = new Question(Alonso.toByteArray(),
                 "Juan Mata", "Fernando Torres", "Marcos Alonso", "David Silva", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(alonso);
 
         BigInteger Perisic = BigInteger.valueOf(R.drawable.perisic);
         Question perisic = new Question(Perisic.toByteArray(),
                 "Ivan Perisic", "Mario Mandzukic", "Robert Lewandowski", "Luca Modric", 1,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(perisic);
 
         BigInteger Higuain = BigInteger.valueOf(R.drawable.higuain);
         Question higuain = new Question(Higuain.toByteArray(),
                 "Lorenzo Insigne", "Suso", "Gonzalo Higuain", "Edinson Cavani", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(higuain);
 
         BigInteger Ibra = BigInteger.valueOf(R.drawable.ibra);
         Question ibra = new Question(Ibra.toByteArray(),
                 "Zlatan Ibrahimovic", "Ronaldo", "Angel di Maria", "Samuel Eto'o", 1,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(ibra);
 
         BigInteger Pjanic = BigInteger.valueOf(R.drawable.pjanic);
         Question pjanic = new Question(Pjanic.toByteArray(),
                 "Edin Dzeko", "Wojciech Szczęsny", "Miralem Pjanic", "Mario Mandzukic", 3,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(pjanic);
 
         BigInteger Jovic = BigInteger.valueOf(R.drawable.jovic);
         Question jovic = new Question(Jovic.toByteArray(),
                 "Mateo Kovacic", "Luca Jovic", "Ante Rebic", "Luca Modric", 2,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(jovic);
 
         BigInteger Douglascosta = BigInteger.valueOf(R.drawable.douglascosta);
         Question douglascosta = new Question(Douglascosta.toByteArray(),
                 "Diego Costa", "Ronaldinho", "Willian", "Douglas Costa", 4,
-                Question.LEVEL_2);
+                Question.LEVEL_6);
         insertQuestions(douglascosta);
 
     }

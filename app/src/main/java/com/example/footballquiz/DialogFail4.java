@@ -23,8 +23,7 @@ public class DialogFail4 extends AppCompatDialogFragment {
     private Quiz3 q3;
     private Quiz4 q4;
 
-    private int score1, score2, score3, score4;
-    private int total4;
+    private int score4;
 
     @NonNull
     @Override
@@ -36,22 +35,15 @@ public class DialogFail4 extends AppCompatDialogFragment {
 
         builder.setView(view);
 
-        q = new Quiz();
-        q2 = new Quiz2();
-        q3 = new Quiz3();
         q4 = new Quiz4();
 
-        score1 = q.score;
-        score2 = q2.score2;
-        score3 = q3.score3;
         score4 = q4.score4;
 
         failMaxPoints = view.findViewById(R.id.failMaxpoints);
-        failMaxPoints.setText("Max points: 120");
+        failMaxPoints.setText("Max points: 30");
 
-        total4 = score1 + score2 + score3 + score4;
         textviewScore = view.findViewById(R.id.level_score_);
-        textviewScore.setText("Score: " + total4);
+        textviewScore.setText("Score: " + score4);
 
         b = view.findViewById(R.id.failedlevel);
 
@@ -70,7 +62,6 @@ public class DialogFail4 extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Quiz4.class);
-                intent.putExtra("level4fail", total4);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }

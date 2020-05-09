@@ -31,7 +31,7 @@ public class Quiz2 extends AppCompatActivity {
     private Question currentQuestion;
 
     static int score2;
-    private int questionCount, scoreFromPrevLevels, totalQuestions;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
@@ -41,11 +41,6 @@ public class Quiz2 extends AppCompatActivity {
 
         score2 = 0;
 
-        Intent intent = getIntent();
-        scoreFromPrevLevels = intent.getIntExtra("scoreLevel1", 0 );
-
-        Intent i = getIntent();
-        scoreFromPrevLevels = i.getIntExtra("level2fail", scoreFromPrevLevels);
 
         questionImg = findViewById(R.id.question_image2);
         radioGroup = findViewById(R.id.radiogr2);
@@ -102,8 +97,8 @@ public class Quiz2 extends AppCompatActivity {
             answered = false;
             questionCount++;
             confirm.setText("Confirm");
-        }else{
-            if((score2 + scoreFromPrevLevels) >= 55) {
+        }else{ // 55
+            if(score2 >= 4) {
                 finishLevel_2();
             }else{
                 level2_fail();

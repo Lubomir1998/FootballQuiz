@@ -66,7 +66,8 @@ public class Quiz extends AppCompatActivity {
 
         Collections.shuffle(listOfQuestions);
 
-        score = getIntent().getIntExtra("scorefail", 0);
+        score = 0;
+
         showNextQuestion();
 
         confirm.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +107,8 @@ public class Quiz extends AppCompatActivity {
             answered = false;
             questionCount++;
             confirm.setText("Confirm");
-        }else{
-            if(score >= 5) {
+        }else{// 25
+            if(score >= 4) {
                 finishLevel_1();
             }else{
                 level1_fail();

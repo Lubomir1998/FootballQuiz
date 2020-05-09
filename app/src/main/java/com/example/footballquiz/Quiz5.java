@@ -41,11 +41,6 @@ public class Quiz5 extends AppCompatActivity {
         setContentView(R.layout.activity_quiz5);
 
         score5 = 0;
-        Intent intent = getIntent();
-        scoreFromPrevLevels = intent.getIntExtra("scoreLevel4", 0 );
-
-        Intent i = getIntent();
-        scoreFromPrevLevels = i.getIntExtra("level5fail", scoreFromPrevLevels);
 
         questionImg = findViewById(R.id.question_image5);
         radioGroup = findViewById(R.id.radiogr5);
@@ -102,8 +97,8 @@ public class Quiz5 extends AppCompatActivity {
             answered = false;
             questionCount++;
             confirm.setText("Confirm");
-        }else{
-            if((score5 + scoreFromPrevLevels) >= 135) {
+        }else{ // 135
+            if(score5 >= 4) {
                 finishLevel_5();
             }else{
                 level5_fail();

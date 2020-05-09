@@ -32,7 +32,7 @@ public class Quiz6 extends AppCompatActivity {
     private Question currentQuestion;
 
     static int score6;
-    private int questionCount, scoreFromPrevLevels, totalQuestions;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
 
@@ -42,11 +42,6 @@ public class Quiz6 extends AppCompatActivity {
         setContentView(R.layout.activity_quiz6);
 
         score6 = 0;
-        Intent intent = getIntent();
-        scoreFromPrevLevels = intent.getIntExtra("scoreLevel5", 0 );
-
-        Intent i = getIntent();
-        scoreFromPrevLevels = i.getIntExtra("level6fail", scoreFromPrevLevels);
 
         questionImg = findViewById(R.id.question_image6);
         radioGroup = findViewById(R.id.radiogr6);
@@ -104,7 +99,8 @@ public class Quiz6 extends AppCompatActivity {
             questionCount++;
             confirm.setText("Confirm");
         }else{
-            if((score6 + scoreFromPrevLevels) >= 3) {
+            // 173
+            if(score6 >= 4) {
                 finishLevel_6();
             }else{
                 level6_fail();
@@ -130,8 +126,8 @@ public class Quiz6 extends AppCompatActivity {
     }
 
     private void finishLevel_6(){
-//        DialogSuccess5 dialogSuccess = new DialogSuccess5();
-//        dialogSuccess.show(getSupportFragmentManager(), "Tag5");
+        FinishQuizDialog finishQuizDialog = new FinishQuizDialog();
+        finishQuizDialog.show(getSupportFragmentManager(), "Tag6");
     }
 
     private void level6_fail(){

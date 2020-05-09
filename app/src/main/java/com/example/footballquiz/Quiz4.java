@@ -32,7 +32,7 @@ public class Quiz4 extends AppCompatActivity {
     private Question currentQuestion;
 
     static int score4;
-    private int questionCount, scoreFromPrevLevels, totalQuestions;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
@@ -41,11 +41,6 @@ public class Quiz4 extends AppCompatActivity {
         setContentView(R.layout.activity_quiz4);
 
         score4 = 0;
-        Intent intent = getIntent();
-        scoreFromPrevLevels = intent.getIntExtra("scoreLevel3", 0 );
-
-        Intent i = getIntent();
-        scoreFromPrevLevels = i.getIntExtra("level4fail", scoreFromPrevLevels);
 
         questionImg = findViewById(R.id.question_image4);
         radioGroup = findViewById(R.id.radiogr4);
@@ -102,8 +97,8 @@ public class Quiz4 extends AppCompatActivity {
             answered = false;
             questionCount++;
             confirm.setText("Confirm");
-        }else{
-            if((score4 + scoreFromPrevLevels) >= 105) {
+        }else{ // 105
+            if(score4 >= 4) {
                 finishLevel_4();
             }else{
                 level4_fail();

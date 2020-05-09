@@ -16,12 +16,12 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogSuccess extends AppCompatDialogFragment {
 
-    private Button b, levelList;
+    private Button levelList;
     private TextView maxpoints, textviewScore;
 
     private Quiz q;
 
-    static int total1;
+    private int score1;
 
     @NonNull
     @Override
@@ -35,25 +35,13 @@ public class DialogSuccess extends AppCompatDialogFragment {
 
         q = new Quiz();
 
-        total1 = q.score;
+        score1 = q.score;
 
         maxpoints = view.findViewById(R.id.max_points);
         maxpoints.setText("Max points: 30");
 
         textviewScore = view.findViewById(R.id.level_score);
-        textviewScore.setText("Score: " + total1);
-
-        b = view.findViewById(R.id.goToNextLevel);
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Quiz2.class);
-                intent.putExtra("scoreLevel1", total1);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
+        textviewScore.setText("Score: " + score1);
 
         levelList = view.findViewById(R.id.levelList);
 
