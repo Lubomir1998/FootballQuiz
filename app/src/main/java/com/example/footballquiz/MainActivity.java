@@ -107,4 +107,9 @@ public class MainActivity extends AppCompatActivity {
         a.unlocked6 = s.getBoolean("e", false);
     }
 
+    public void startTheQuizFromLevel1(View view){
+        startActivity(new Intent(getApplicationContext(), Quiz.class));
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
 }

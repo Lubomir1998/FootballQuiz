@@ -22,14 +22,27 @@
         android:src="@drawable/football_field"
         />
 
+    <Button
+        android:id="@+id/begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start quiz"
+        android:textSize="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="290dp"
+        android:onClick="startTheQuizFromLevel1"
+        android:background="@drawable/button_mainactivity"
+        />
+
    <Button
        android:id="@+id/startQuiz"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="Start quiz"
+       android:text="Load quiz"
        android:textSize="22dp"
        android:layout_centerHorizontal="true"
-       android:layout_marginTop="290dp"
+       android:layout_marginTop="40dp"
+       android:layout_below="@id/begin"
        android:background="@drawable/button_mainactivity"
        />
 

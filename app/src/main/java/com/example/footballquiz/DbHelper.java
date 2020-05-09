@@ -59,6 +59,7 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //Questions are different levels and some are commented in debuging purposes
     private void fillQuestions(){
 
         // Level 1 ----------------------------------------------------------------------------------------------
@@ -246,6 +247,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 Question.LEVEL_6);
         insertQuestions(ibra);
 
+        /*
         BigInteger Pjanic = BigInteger.valueOf(R.drawable.pjanic);
         Question pjanic = new Question(Pjanic.toByteArray(),
                 "Edin Dzeko", "Wojciech Szczęsny", "Miralem Pjanic", "Mario Mandzukic", 3,
@@ -263,6 +265,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "Diego Costa", "Ronaldinho", "Willian", "Douglas Costa", 4,
                 Question.LEVEL_6);
         insertQuestions(douglascosta);
+
+         */
 
     }
 
