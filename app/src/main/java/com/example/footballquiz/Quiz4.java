@@ -124,12 +124,18 @@ public class Quiz4 extends AppCompatActivity {
     }
 
     private void finishLevel_4(){
-        DialogSuccess4 dialogSuccess = new DialogSuccess4();
-        dialogSuccess.show(getSupportFragmentManager(), "Tag4");
+        Bundle bundle = new Bundle();
+        bundle.putInt("4", 4);
+        DialogNextLevel dialogNextLevel = new DialogNextLevel();
+        dialogNextLevel.setArguments(bundle);
+        dialogNextLevel.show(getSupportFragmentManager(), "Tag4");
     }
 
     private void level4_fail(){
-        DialogFail4 dialogFail = new DialogFail4();
+        Bundle bundle = new Bundle();
+        bundle.putInt("four", 4);
+        DialogFail dialogFail = new DialogFail();
+        dialogFail.setArguments(bundle);
         dialogFail.show(getSupportFragmentManager(), "Tag4_");
     }
 

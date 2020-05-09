@@ -15,13 +15,19 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogFail extends AppCompatDialogFragment {
 
-    private Button b, levelList;
-    private TextView textviewScore, failMaxPoints;
+    TextView fail;
+    Button levelList, tryAgain;
 
-    private Quiz q;
+    private Quiz q1;
+    private Quiz2 q2;
+    private Quiz3 q3;
+    private Quiz4 q4;
+    private Quiz5 q5;
 
-    private int score1;
+    private int l1, l2, l3, l4, l5, l6;
+    private int currentLevel;
 
+    private DialogNextLevel d;
 
     @NonNull
     @Override
@@ -30,41 +36,77 @@ public class DialogFail extends AppCompatDialogFragment {
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_fail, null);
-
         builder.setView(view);
 
-        q = new Quiz();
-        score1 = q.score;
+       // TextView
+        fail = view.findViewById(R.id.level_score_);
 
-        failMaxPoints = view.findViewById(R.id.failMaxpoints);
-        failMaxPoints.setText("Max points: 30");
-
-        textviewScore = view.findViewById(R.id.level_score_);
-        textviewScore.setText("Score: " + score1);
-
-        b = view.findViewById(R.id.failedlevel);
-
+       // Buttons
+        tryAgain = view.findViewById(R.id.failedlevel);
         levelList = view.findViewById(R.id.levelList);
+
+        q1 = new Quiz();
+        q2 = new Quiz2();
+        q3 = new Quiz3();
+        q4 = new Quiz4();
+        q5 = new Quiz5();
+
+        d = new DialogNextLevel();
+
+        // default value is -1 so there will be only one positive number(the number of level which we have failed)
+        l1 = getArguments().getInt("one", -1);
+        l2 = getArguments().getInt("two", -1);
+        l3 = getArguments().getInt("three", -1);
+        l4 = getArguments().getInt("four", -1);
+        l5 = getArguments().getInt("five", -1);
+        l6 = getArguments().getInt("six", -1);
+
+        currentLevel = d.findMax(l1, l2, l3, l4, l5, l6);
+
+        d.showPoints(fail, currentLevel);
 
         levelList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getActivity(), AllLevelsActivity.class));
                 getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
-        b.setOnClickListener(new View.OnClickListener() {
+
+        tryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Quiz.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                if(currentLevel == 1){
+                    startActivity(new Intent(getActivity(), Quiz.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else if(currentLevel == 2){
+                    startActivity(new Intent(getActivity(), Quiz2.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else if(currentLevel == 3){
+                    startActivity(new Intent(getActivity(), Quiz3.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else if(currentLevel == 4){
+                    startActivity(new Intent(getActivity(), Quiz4.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else if(currentLevel == 5){
+                    startActivity(new Intent(getActivity(), Quiz5.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else if(currentLevel == 6){
+                    startActivity(new Intent(getActivity(), Quiz6.class));
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
             }
         });
 
+
         return builder.create();
+
     }
 
 

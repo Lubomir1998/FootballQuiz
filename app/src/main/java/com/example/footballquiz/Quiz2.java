@@ -124,12 +124,18 @@ public class Quiz2 extends AppCompatActivity {
     }
 
     private void finishLevel_2(){
-        DialogSuccess2 dialogSuccess = new DialogSuccess2();
-        dialogSuccess.show(getSupportFragmentManager(), "Tag2");
+        Bundle bundle = new Bundle();
+        bundle.putInt("2", 2);
+        DialogNextLevel dialogNextLevel = new DialogNextLevel();
+        dialogNextLevel.setArguments(bundle);
+        dialogNextLevel.show(getSupportFragmentManager(), "Tag2");
     }
 
     private void level2_fail(){
-        DialogFail2 dialogFail = new DialogFail2();
+        Bundle bundle = new Bundle();
+        bundle.putInt("two", 2);
+        DialogFail dialogFail = new DialogFail();
+        dialogFail.setArguments(bundle);
         dialogFail.show(getSupportFragmentManager(), "Tag2_");
     }
 

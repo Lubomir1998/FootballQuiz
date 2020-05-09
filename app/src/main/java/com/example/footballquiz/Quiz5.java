@@ -124,12 +124,18 @@ public class Quiz5 extends AppCompatActivity {
     }
 
     private void finishLevel_5(){
-        DialogSuccess5 dialogSuccess = new DialogSuccess5();
-        dialogSuccess.show(getSupportFragmentManager(), "Tag5");
+        Bundle bundle = new Bundle();
+        bundle.putInt("5", 5);
+        DialogNextLevel dialogNextLevel = new DialogNextLevel();
+        dialogNextLevel.setArguments(bundle);
+        dialogNextLevel.show(getSupportFragmentManager(), "Tag5");
     }
 
     private void level5_fail(){
-        DialogFail5 dialogFail = new DialogFail5();
+        Bundle bundle = new Bundle();
+        bundle.putInt("five", 5);
+        DialogFail dialogFail = new DialogFail();
+        dialogFail.setArguments(bundle);
         dialogFail.show(getSupportFragmentManager(), "Tag5_");
     }
 

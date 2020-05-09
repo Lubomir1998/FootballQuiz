@@ -123,12 +123,18 @@ public class Quiz3 extends AppCompatActivity {
     }
 
     private void finishLevel_3(){
-        DialogSuccess3 dialogSuccess = new DialogSuccess3();
-        dialogSuccess.show(getSupportFragmentManager(), "Tag3");
+        Bundle bundle = new Bundle();
+        bundle.putInt("3", 3);
+        DialogNextLevel dialogNextLevel = new DialogNextLevel();
+        dialogNextLevel.setArguments(bundle);
+        dialogNextLevel.show(getSupportFragmentManager(), "Tag3");
     }
 
     private void level3_fail(){
-        DialogFail3 dialogFail = new DialogFail3();
+        Bundle bundle = new Bundle();
+        bundle.putInt("three", 3);
+        DialogFail dialogFail = new DialogFail();
+        dialogFail.setArguments(bundle);
         dialogFail.show(getSupportFragmentManager(), "Tag3_");
     }
 

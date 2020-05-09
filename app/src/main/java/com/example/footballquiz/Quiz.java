@@ -2,29 +2,18 @@ package com.example.footballquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Quiz extends AppCompatActivity {
     private DbHelper helper= new DbHelper(this);
@@ -168,13 +157,19 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void finishLevel_1(){
-        DialogSuccess dialogSuccess = new DialogSuccess();
-        dialogSuccess.show(getSupportFragmentManager(), "Tag");
+        Bundle bundle = new Bundle();
+        bundle.putInt("1", 1);
+        DialogNextLevel dialogNextLevel = new DialogNextLevel();
+        dialogNextLevel.setArguments(bundle);
+        dialogNextLevel.show(getSupportFragmentManager(), "Tag1");
     }
 
     private void level1_fail(){
+        Bundle bundle = new Bundle();
+        bundle.putInt("one", 1);
         DialogFail dialogFail = new DialogFail();
-        dialogFail.show(getSupportFragmentManager(), "Tag_");
+        dialogFail.setArguments(bundle);
+        dialogFail.show(getSupportFragmentManager(), "Tag1_");
     }
 
 

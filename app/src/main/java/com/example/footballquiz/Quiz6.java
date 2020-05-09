@@ -131,7 +131,10 @@ public class Quiz6 extends AppCompatActivity {
     }
 
     private void level6_fail(){
-        DialogFail6 dialogFail = new DialogFail6();
+        Bundle bundle = new Bundle();
+        bundle.putInt("six", 6);
+        DialogFail dialogFail = new DialogFail();
+        dialogFail.setArguments(bundle);
         dialogFail.show(getSupportFragmentManager(), "Tag6_");
     }
 
