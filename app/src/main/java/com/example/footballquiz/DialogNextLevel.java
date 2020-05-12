@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 public class DialogNextLevel extends AppCompatDialogFragment {
 
     private Button levelList;
-    private TextView points;
+    private TextView points, pointsMax;
 
     private Quiz q1;
     private Quiz2 q2;
@@ -47,6 +47,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
 
         //TextView
         points = view.findViewById(R.id.level_score);
+        pointsMax = view.findViewById(R.id.max_points);
 
         //Button
         levelList = view.findViewById(R.id.levelList);
@@ -69,7 +70,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
 
 
      // set the text where the number of points is shown
-        df.showPoints(points, previousLevel);
+        df.showPoints(points, pointsMax, previousLevel);
 
         loadUnlocked();
 

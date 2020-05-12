@@ -247,12 +247,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 Question.LEVEL_6);
         insertQuestions(ibra);
 
-        /*
+/*
         BigInteger Pjanic = BigInteger.valueOf(R.drawable.pjanic);
         Question pjanic = new Question(Pjanic.toByteArray(),
                 "Edin Dzeko", "Wojciech Szczęsny", "Miralem Pjanic", "Mario Mandzukic", 3,
-                Question.LEVEL_6);
+                Question.LEVEL_1);
         insertQuestions(pjanic);
+
 
         BigInteger Jovic = BigInteger.valueOf(R.drawable.jovic);
         Question jovic = new Question(Jovic.toByteArray(),

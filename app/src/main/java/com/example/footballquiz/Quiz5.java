@@ -2,7 +2,6 @@ package com.example.footballquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -27,12 +26,12 @@ public class Quiz5 extends AppCompatActivity {
 
     private ColorStateList defaultColors;
 
-    private List<Question> listOfQuestions;
+    static List<Question> listOfQuestions5;
 
     private Question currentQuestion;
 
     static int score5;
-    private int questionCount, scoreFromPrevLevels, totalQuestions;
+    private int questionCount, totalQuestions;
     private boolean answered;
 
     @Override
@@ -52,11 +51,11 @@ public class Quiz5 extends AppCompatActivity {
 
         defaultColors = option_A.getTextColors();
 
-        listOfQuestions = helper.getQuestionsForExactLevel(Question.LEVEL_5);
+        listOfQuestions5 = helper.getQuestionsForExactLevel(Question.LEVEL_5);
 
-        totalQuestions = listOfQuestions.size();
+        totalQuestions = listOfQuestions5.size();
 
-        Collections.shuffle(listOfQuestions);
+        Collections.shuffle(listOfQuestions5);
 
         showNextQuestion();
 
@@ -85,7 +84,7 @@ public class Quiz5 extends AppCompatActivity {
         radioGroup.clearCheck();
 
         if(questionCount < totalQuestions) {
-            currentQuestion = listOfQuestions.get(questionCount);
+            currentQuestion = listOfQuestions5.get(questionCount);
             byte[] bb = currentQuestion.getQuestion();
 
             questionImg.setImageResource(ByteBuffer.wrap(bb).getInt());

@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogFail extends AppCompatDialogFragment {
 
-    TextView fail;
+    TextView fail, failMax;
     Button levelList, tryAgain;
 
     private Quiz q1;
@@ -41,6 +41,8 @@ public class DialogFail extends AppCompatDialogFragment {
 
        // TextView
         fail = view.findViewById(R.id.level_score_);
+        failMax = view.findViewById(R.id.failMaxpoints);
+
 
        // Buttons
         tryAgain = view.findViewById(R.id.failedlevel);
@@ -66,7 +68,7 @@ public class DialogFail extends AppCompatDialogFragment {
 
         currentLevel = d.findMax(l1, l2, l3, l4, l5, l6);
 
-        showPoints(fail, currentLevel);
+        showPoints(fail, failMax, currentLevel);
 
         levelList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,25 +114,31 @@ public class DialogFail extends AppCompatDialogFragment {
 
     }
 
-    public void showPoints(TextView t, int l){
+    public void showPoints(TextView t, TextView t2, int l){
         switch (l){
             case 1:
-                t.setText("Score: " + String.valueOf(q1.score));
+                t.setText("Score: " + q1.score);
+                t2.setText("Max points: " + q1.listOfQuestions.size());
                 break;
             case 2:
-                t.setText("Score: " + String.valueOf(q2.score2));
+                t.setText("Score: " + q2.score2);
+                t2.setText("Max points: " + q2.listOfQuestions2.size());
                 break;
             case 3:
-                t.setText("Score: " + String.valueOf(q3.score3));
+                t.setText("Score: " + q3.score3);
+                t2.setText("Max points: " + q3.listOfQuestions3.size());
                 break;
             case 4:
-                t.setText("Score: " + String.valueOf(q4.score4));
+                t.setText("Score: " + q4.score4);
+                t2.setText("Max points: " + q4.listOfQuestions4.size());
                 break;
             case 5:
-                t.setText("Score: " + String.valueOf(q5.score5));
+                t.setText("Score: " + q5.score5);
+                t2.setText("Max points: " + q5.listOfQuestions5.size());
                 break;
             case 6:
-                t.setText("Score: " + String.valueOf(q6.score6));
+                t.setText("Score: " + q6.score6);
+                t2.setText("Max points: " + q6.listOfQuestions6.size());
                 break;
         }
     }

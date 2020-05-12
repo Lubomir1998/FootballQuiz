@@ -25,7 +25,7 @@ public class Quiz extends AppCompatActivity {
 
     private ColorStateList defaultColors;
 
-    private List<Question> listOfQuestions;
+    static List<Question> listOfQuestions;
 
     private Question currentQuestion;
 

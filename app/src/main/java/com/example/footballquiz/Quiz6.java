@@ -2,7 +2,6 @@ package com.example.footballquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +26,7 @@ public class Quiz6 extends AppCompatActivity {
 
     private ColorStateList defaultColors;
 
-    private List<Question> listOfQuestions;
+    static List<Question> listOfQuestions6;
 
     private Question currentQuestion;
 
@@ -53,11 +52,11 @@ public class Quiz6 extends AppCompatActivity {
 
         defaultColors = option_A.getTextColors();
 
-        listOfQuestions = helper.getQuestionsForExactLevel(Question.LEVEL_6);
+        listOfQuestions6 = helper.getQuestionsForExactLevel(Question.LEVEL_6);
 
-        totalQuestions = listOfQuestions.size();
+        totalQuestions = listOfQuestions6.size();
 
-        Collections.shuffle(listOfQuestions);
+        Collections.shuffle(listOfQuestions6);
 
         showNextQuestion();
 
@@ -86,7 +85,7 @@ public class Quiz6 extends AppCompatActivity {
         radioGroup.clearCheck();
 
         if(questionCount < totalQuestions) {
-            currentQuestion = listOfQuestions.get(questionCount);
+            currentQuestion = listOfQuestions6.get(questionCount);
             byte[] bb = currentQuestion.getQuestion();
 
             questionImg.setImageResource(ByteBuffer.wrap(bb).getInt());
