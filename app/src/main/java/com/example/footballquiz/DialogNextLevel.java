@@ -101,7 +101,7 @@ public class DialogNextLevel extends AppCompatDialogFragment {
                 else {
                     Intent intent = new Intent(getActivity(), AllLevelsActivity.class);
                     startActivity(intent);
-                    getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
+                    getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
             }
         });

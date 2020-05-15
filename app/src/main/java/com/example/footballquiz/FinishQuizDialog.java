@@ -32,7 +32,7 @@ public class FinishQuizDialog extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), MainActivity.class));
-                getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

@@ -84,14 +84,14 @@ public class AllLevelsActivity extends AppCompatActivity {
 
     public void Level_1(View view){
         startActivity(new Intent(getApplicationContext(), Quiz.class));
-        overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void Level_2(View view){
         if(unlocked2){
             Intent intent = new Intent(getApplicationContext(), Quiz2.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(getApplicationContext(), "You haven't unlocked this level", Toast.LENGTH_SHORT).show();
@@ -102,7 +102,7 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(unlocked3){
             Intent intent = new Intent(getApplicationContext(), Quiz3.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(getApplicationContext(), "You haven't unlocked this level", Toast.LENGTH_SHORT).show();
@@ -113,7 +113,7 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(unlocked4){
             Intent intent = new Intent(getApplicationContext(), Quiz4.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(getApplicationContext(), "You haven't unlocked this level", Toast.LENGTH_SHORT).show();
@@ -124,7 +124,7 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(unlocked5){
             Intent intent = new Intent(getApplicationContext(), Quiz5.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(getApplicationContext(), "You haven't unlocked this level", Toast.LENGTH_SHORT).show();
@@ -135,7 +135,7 @@ public class AllLevelsActivity extends AppCompatActivity {
         if(unlocked6){
             Intent intent = new Intent(getApplicationContext(), Quiz6.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
         else{
             Toast.makeText(getApplicationContext(), "You haven't unlocked this level", Toast.LENGTH_SHORT).show();
@@ -164,5 +164,9 @@ public class AllLevelsActivity extends AppCompatActivity {
         unlocked6 = sharedPreferences.getBoolean("e", false);
     }
 
+    public void returnToMenu(View view){
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 
 }

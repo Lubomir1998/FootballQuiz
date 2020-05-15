@@ -66,32 +66,32 @@ public class MainActivity extends AppCompatActivity {
             case 6:
                 Intent intent6 = new Intent(MainActivity.this, Quiz6.class);
                 startActivity(intent6);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case 5:
                 Intent intent5 = new Intent(MainActivity.this, Quiz5.class);
                 startActivity(intent5);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case 4:
                 Intent intent4 = new Intent(MainActivity.this, Quiz4.class);
                 startActivity(intent4);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case 3:
                 Intent intent3 = new Intent(MainActivity.this, Quiz3.class);
                 startActivity(intent3);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case 2:
                 Intent intent2 = new Intent(MainActivity.this, Quiz2.class);
                 startActivity(intent2);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             default:
                 Intent intent = new Intent(MainActivity.this, Quiz.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
         }
 

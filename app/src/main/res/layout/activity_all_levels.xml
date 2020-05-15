@@ -87,4 +87,19 @@
         android:onClick="Level_6"
         />
 
+    <ImageButton
+        android:onClick="returnToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:layout_below="@id/b1"
+        android:textSize="20sp"
+        />
+
 </LinearLayout>

@@ -96,7 +96,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         BigInteger Dybala = BigInteger.valueOf(R.drawable.dybala);
         Question dybala = new Question(Dybala.toByteArray(),
-                "Giorgio Chiellini", "Alessandro Del Piero", "Edinson Cavani", "Paolo Dybala", 4,
+                "Giorgio Chiellini", "Edinson Cavani", "Alessandro Del Piero", "Paolo Dybala", 4,
                 Question.LEVEL_2);
         insertQuestions(dybala);
 
@@ -177,7 +177,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         BigInteger Tadic = BigInteger.valueOf(R.drawable.tadic);
         Question tadic = new Question(Tadic.toByteArray(),
-                "Frankie de Jong", "Nemanja Matic", "Dusan Tadic", "Branislav Ivanovic", 3,
+                "Frankie de Jong", "Branislav Ivanovic", "Dusan Tadic", "Nemanja Matic", 3,
                 Question.LEVEL_4);
         insertQuestions(tadic);
 
