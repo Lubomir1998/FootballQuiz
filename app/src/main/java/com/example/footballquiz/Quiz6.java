@@ -137,4 +137,9 @@ public class Quiz6 extends AppCompatActivity {
         dialogFail.show(getSupportFragmentManager(), "Tag6_");
     }
 
+    public void backToMainMenu6(View view){
+        ReturnToMenu r = new ReturnToMenu();
+        r.show(getSupportFragmentManager(), "!f");
+    }
+
 }

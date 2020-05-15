@@ -137,4 +137,9 @@ public class Quiz3 extends AppCompatActivity {
         dialogFail.show(getSupportFragmentManager(), "Tag3_");
     }
 
+    public void backToMainMenu3(View view){
+        ReturnToMenu r = new ReturnToMenu();
+        r.show(getSupportFragmentManager(), "!c");
+    }
+
 }

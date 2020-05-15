@@ -138,4 +138,9 @@ public class Quiz2 extends AppCompatActivity {
         dialogFail.show(getSupportFragmentManager(), "Tag2_");
     }
 
+    public void backToMainMenu2(View view){
+        ReturnToMenu r = new ReturnToMenu();
+        r.show(getSupportFragmentManager(), "!b");
+    }
+
 }

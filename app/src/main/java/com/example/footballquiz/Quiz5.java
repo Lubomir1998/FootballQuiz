@@ -138,4 +138,9 @@ public class Quiz5 extends AppCompatActivity {
         dialogFail.show(getSupportFragmentManager(), "Tag5_");
     }
 
+    public void backToMainMenu5(View view){
+        ReturnToMenu r = new ReturnToMenu();
+        r.show(getSupportFragmentManager(), "!e");
+    }
+
 }

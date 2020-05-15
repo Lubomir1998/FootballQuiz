@@ -2,6 +2,7 @@ package com.example.footballquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -172,5 +173,9 @@ public class Quiz extends AppCompatActivity {
         dialogFail.show(getSupportFragmentManager(), "Tag1_");
     }
 
+    public void backToMainMenu(View view){
+        ReturnToMenu r = new ReturnToMenu();
+        r.show(getSupportFragmentManager(), "!a");
+    }
 
 }
